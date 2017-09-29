@@ -83,7 +83,8 @@ func writeJson(p_file *os.File, p_doc [5]string) {
 		p_doc[0], p_doc[1], p_doc[2], p_doc[3], p_doc[4])
 }
 
-func fourmisse(p_c <-chan string, p_end chan string, p_n int) {
+func worker(p_c <-chan string, p_end chan string, p_n int) {
+	l_bulk,_ := strconv.Atoi(os.Args[1])
 	l_i := 1
 	l_fileName := "bulk" + strconv.Itoa(p_n) + ".json"
 	l_json, err := os.Create(l_fileName)
@@ -94,7 +95,7 @@ func fourmisse(p_c <-chan string, p_end chan string, p_n int) {
 			p_end <- ""
 			break
 		}
-		if l_i%1000 == 0 {
+		if l_i%l_bulk == 0 {
 			sendJson(l_fileName)
 			err := os.Remove(l_fileName)
 			check(err)
@@ -149,14 +150,14 @@ func main() {
 	c_doc := make (chan string)
 	c_end := make (chan string)
 
-	nbFourmisse := 3									// <====== number of goroutine
-	for i := 1; i <= nbFourmisse; i++ {
-		go fourmisse(c_doc, c_end, i)
+	nbWorker,_ := strconv.Atoi(os.Args[2])								// <====== number of goroutine
+	for i := 1; i <= nbWorker; i++ {
+		go worker(c_doc, c_end, i)
 	}
 
 	go progress(c_progress, int(stat.Size()))
 	go listenStdin(c_progress)
-	fmt.Println("Injection with " + strconv.Itoa(nbFourmisse) + " goroutines")
+	fmt.Println("Injection with " + strconv.Itoa(nbWorker) + " goroutines")
 	fmt.Println("Press *enter* for know advancement")
 
 	i := 1
@@ -173,19 +174,19 @@ func main() {
 
 
 
-	for i := 1; i <= nbFourmisse; i++ {
+	for i := 1; i <= nbWorker; i++ {
 		c_doc <- "end"
 	}
 	i=0
 	for {
 		<-c_end
 		i++
-		if i == nbFourmisse {
+		if i == nbWorker {
 			break
 		}
 	}
 
-	for i := 1; i <= nbFourmisse; i++ {
+	for i := 1; i <= nbWorker; i++ {
 		sendJson("bulk"+strconv.Itoa(i)+".json")
 		err = os.Remove("bulk"+strconv.Itoa(i)+".json")
 		check(err)

@@ -71,7 +71,7 @@ with open('/Users/simon/workspace/client_ES/tmp/data_clone.csv') as c_fp:
 
         l_num += 1
 
-        if 1000 < len(l_docs):
+        if int(sys.argv[1]) < len(l_docs):
             bulkInject(g_es, l_docs)
             l_docs = []
 
