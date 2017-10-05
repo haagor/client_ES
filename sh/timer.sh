@@ -1,29 +1,36 @@
 #!/bin/bash
+LOOP=100
 
 echo > tmp/time
 
 echo \#py1000 >> tmp/time
-for i in {1..10}; do
+for i in {1..$LOOP}; do
 	# care gtime (MacOs) = time (Linux)
     (gtime --f '%e' python py/client_clone.py 1000) 2>> tmp/time
 done
 
-echo \#go1000-1 >> tmp/time
-go build go/client_clone.go
-for i in {1..10}; do
+echo \#pypy1000 >> tmp/time
+for i in {1..$LOOP}; do
 	# care gtime (MacOs) = time (Linux)
-    (gtime --f '%e' ./client_clone 1000 1) 2>> tmp/time
-done
-rm client_clone
-
-echo \#go1000-1 >> tmp/time
-for i in {1..10}; do
-	# care gtime (MacOs) = time (Linux)
-    (gtime --f '%e' go run go/client_clone.go 1000 1) 2>> tmp/time
+    (gtime --f '%e' ../pypy2-v5.9.0-osx64/bin/pypy py/client_clone.py 1000) 2>> tmp/time
 done
 
-echo \#go1000-2 >> tmp/time
-for i in {1..10}; do
-	# care gtime (MacOs) = time (Linux)
-    (gtime --f '%e' go run go/client_clone.go 1000 2) 2>> tmp/time
+for j in {1..10}; do
+
+	echo \#goB1000-$j >> tmp/time
+	go build go/client_clone.go
+	for i in {1..$LOOP}; do
+		# care gtime (MacOs) = time (Linux)
+    	(gtime --f '%e' ./client_clone 1000 $j) 2>> tmp/time
+	done
+	rm client_clone
+
+	echo \#go1000-$j >> tmp/time
+	for i in {1..$LOOP}; do
+		# care gtime (MacOs) = time (Linux)
+    	(gtime --f '%e' go run go/client_clone.go 1000 $j) 2>> tmp/time
+	done
+
 done
+
+python py/averageTime.py $LOOP
