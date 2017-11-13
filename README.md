@@ -19,7 +19,7 @@ Ce premier graphe resulte de 100 éxécutions du client Python, en retirant les 
 Ainsi Go affiche de meilleurs performance que Python ou Pypy. Python étant un langage interprété contre Go qui est compilé, la différence de performance s'explique à priori simplement. En revanche le peu de différence entre Python et Pypy est surprenant dans la mesure où Pypy est sensé palier ce défaut du langage interprété, je ménerai l'enquête (`todo`).
 J'ai dans un second temps observé les résultats de mes tests et j'ai été plutôt étonné de la dispersion des résultats. Cela a motivé les graphes suivants :
 
-[![N|Solid](https://raw.githubusercontent.com/haagor/client_ES/master/docs/graphes_iter.png)]
+![N|Solid](https://raw.githubusercontent.com/haagor/client_ES/master/docs/graphes_iter.png)
 
 La dispersion des temps pour les exécutions du client Go est en effet troublant et mérite là encore enquête de ma part (`todo`).
 
