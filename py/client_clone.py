@@ -31,7 +31,7 @@ def bulkInject(p_es, p_docs):
         sys.exit(1)
 
 
-with open('/Users/simon/workspace/client_ES/tmp/data_clone.csv') as c_fp:
+with open('/home/user/workspace/open/client_ES/tmp/data_clone.csv') as c_fp:
     l_num = 0
     l_docs = []
     for c_line in c_fp :

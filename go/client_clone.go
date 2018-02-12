@@ -42,7 +42,7 @@ func catchData(p_line string) ([5]string, error) {
 }
 
 func creatIndex() {
-	l_f, err := os.Open("/Users/simon/workspace/client_ES/go/index_clone.json")
+	l_f, err := os.Open("/home/user/workspace/open/client_ES/go/index_clone.json")
 	check(err)
 	defer l_f.Close()
 	l_req, err := http.NewRequest("PUT", "http://localhost:9200/clones", l_f)
@@ -139,7 +139,7 @@ func main() {
 	deleteIndex()
 	creatIndex()
 
-	file, err := os.Open("/Users/simon/workspace/client_ES/tmp/data_clone.csv")
+	file, err := os.Open("/home/user/workspace/open/client_ES/tmp/data_clone.csv")
 	check(err)
 	stat, err := file.Stat()
 	check(err)

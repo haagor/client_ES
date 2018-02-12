@@ -1,0 +1,21 @@
+[0m[[0m[0minfo[0m] [0m[0mPackaging /home/user/workspace/open/client_ES/spark/readCSV_M/target/scala-2.11/client-es_2.11-1.0.jar ...[0m
+[0m[[0m[0mdebug[0m] [0m[0mInput file mappings:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	pl[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/user/workspace/open/client_ES/spark/readCSV_M/target/scala-2.11/classes/pl[0m
+[0m[[0m[0mdebug[0m] [0m[0m	pl/japila/spark/reader$$anonfun$1$$anonfun$apply$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/user/workspace/open/client_ES/spark/readCSV_M/target/scala-2.11/classes/pl/japila/spark/reader$$anonfun$1$$anonfun$apply$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	pl/japila/spark/reader.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/user/workspace/open/client_ES/spark/readCSV_M/target/scala-2.11/classes/pl/japila/spark/reader.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	pl/japila/spark[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/user/workspace/open/client_ES/spark/readCSV_M/target/scala-2.11/classes/pl/japila/spark[0m
+[0m[[0m[0mdebug[0m] [0m[0m	pl/japila/spark/reader$$anonfun$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/user/workspace/open/client_ES/spark/readCSV_M/target/scala-2.11/classes/pl/japila/spark/reader$$anonfun$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	pl/japila/spark/reader$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/user/workspace/open/client_ES/spark/readCSV_M/target/scala-2.11/classes/pl/japila/spark/reader$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	pl/japila/spark/reader$$anonfun$2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/user/workspace/open/client_ES/spark/readCSV_M/target/scala-2.11/classes/pl/japila/spark/reader$$anonfun$2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	pl/japila/spark/reader$$anonfun$3.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/user/workspace/open/client_ES/spark/readCSV_M/target/scala-2.11/classes/pl/japila/spark/reader$$anonfun$3.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	pl/japila[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/user/workspace/open/client_ES/spark/readCSV_M/target/scala-2.11/classes/pl/japila[0m
+[0m[[0m[0minfo[0m] [0m[0mDone packaging.[0m
